@@ -19,5 +19,9 @@ class ExampleTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
+        $response->assertSeeText('Jørgen');
+        $response->assertSeeText('Peter');
     }
+
+    // TODO: Add more feature tests as you see fit
 }

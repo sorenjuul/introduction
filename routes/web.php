@@ -14,7 +14,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'CustomerController@index');
-Route::get('/customer/{id}', 'CustomerController@show');
-Route::get('/customer/invoice/{id}', 'CustomerController@invoice');
+
+Route::group(['prefix' => 'customer'], function () {
+    Route::get('/{id}', 'CustomerController@show');
+    Route::get('/invoice/{id}', 'CustomerController@invoice');
+});
 
 Route::get('/invoices', 'InvoiceController@index');

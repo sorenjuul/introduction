@@ -7,5 +7,5 @@
         <input type="submit" value="Invoice customer" />
     </form>
 
-    <?php /* TODO: show list of invoices for customer */ ?>
+    {{-- TODO: show list of invoices for customer --}}
 @endsection

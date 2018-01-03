@@ -1,6 +1,40 @@
 
 ## Obviux new developer test case
 
+**Requirements**
+* Composer
+* PHP >= 7.0.0
+* Mbstring PHP Extension
+* Tokenizer PHP Extension
+* XML PHP Extension
+* Sqlite PHP Extension
+
+**Getting started**
+
+- run `composer install`
+- create a `.env` file with:
+```
+APP_ENV=local
+APP_DEBUG=true
+APP_KEY=base64:i7WQo9iUSQud+Oi90HGJzonE4w+SPaV3NI3AMBnee3A=
+APP_URL=http://localhost
+DB_CONNECTION=sqlite
+```
+
+Create a sqlite file:
+
+```
+touch databases/database.sqlite
+```
+
+Run migrations:
+
+```
+php artisan migrate
+```
+
+## Purpose
+
 The purpose of this test case is to get your feet wet in a small contained code base. It is based on the version of
 laravel we use here but in a completely new project, so if you run into any problems on how to do stuff, you can always
 start out by looking it up on the internet.

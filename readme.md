@@ -33,6 +33,13 @@ Run migrations:
 php artisan migrate
 ```
 
+
+Start localhost server (Optional: Feel free to use Nginx, homestead, VB, docker etc.):
+
+```
+php artisan serve
+```
+
 ## Purpose
 
 The purpose of this test case is to get your feet wet in a small contained code base. It is based on the version of

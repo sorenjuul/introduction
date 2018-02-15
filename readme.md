@@ -24,13 +24,13 @@ DB_CONNECTION=sqlite
 Create a sqlite file:
 
 ```
-touch databases/database.sqlite
+touch database/database.sqlite
 ```
 
 Run migrations:
 
 ```
-php artisan migrate
+php artisan migrate --seed
 ```
 
 

@@ -18,6 +18,7 @@ class CreateDeliveriesTable extends Migration
             $table->integer('customer_id');
             $table->datetime('delivered_at');
             $table->integer('count');
+            $table->integer('invoice_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

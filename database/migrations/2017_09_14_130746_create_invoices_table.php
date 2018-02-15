@@ -17,6 +17,7 @@ class CreateInvoicesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->integer('agreement_id');
+            $table->integer('customer_id');
             $table->integer('invoice_no');
             $table->decimal('amount');
             $table->dateTime('invoice_due_at');

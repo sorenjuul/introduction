@@ -16,7 +16,7 @@
             <tr>
                 <td><a href="/customer/{{ $customer->id }}">{{ $customer->number }}</a></td>
                 <td>{{ $customer->name }}</td>
-                <td>{{ $customer->agreement->type }} DKK{{ $customer->agreement->amount }}</td>
+                <td>{{ $customer->agreement->type }} DKK {{ $customer->agreement->unit_price }}</td>
             </tr>
             @endforeach
             </tbody>

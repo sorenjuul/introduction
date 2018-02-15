@@ -36,4 +36,12 @@ class Customer extends Model
     {
         return $this->hasMany(Delivery::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function invoices()
+    {
+        return $this->hasMany(invoices::class);
+    }
 }

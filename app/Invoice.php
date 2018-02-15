@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Customer;
 
 /**
  * @property string $invoice_no
@@ -16,4 +17,13 @@ class Invoice extends Model
     protected $fillable = [
         'agreement_id', 'invoice_no', 'invoice_due_at', 'amount'
     ];
+
+    public function setInvoiceNoAttribute()
+    {
+        $this->attributes['invoice_no'] = 0;
+    }
+
+    public function customer() {
+        return $this->belongsTo(Customer::class);
+    }
 }

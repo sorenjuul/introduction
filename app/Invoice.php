@@ -18,9 +18,9 @@ class Invoice extends Model
         'agreement_id', 'invoice_no', 'invoice_due_at', 'amount'
     ];
 
-    public function setInvoiceNoAttribute()
+    public function setInvoiceNoAttribute($value)
     {
-        $this->attributes['invoice_no'] = 0;
+        $this->attributes['invoice_no'] = $this->id + 1000;
     }
 
     public function customer() {

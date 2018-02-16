@@ -1,6 +1,5 @@
 <?php /** @var $invoices \App\Invoice[]  */ ?>
 
-<h2>Invoices</h2>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>

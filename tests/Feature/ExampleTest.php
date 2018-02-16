@@ -22,6 +22,4 @@ class ExampleTest extends TestCase
         $response->assertSeeText('Jørgen');
         $response->assertSeeText('Peter');
     }
-
-    // TODO: Add more feature tests as you see fit
 }

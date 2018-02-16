@@ -6,5 +6,7 @@
     <form method="get" action="/customer/invoice/{{$customer->id}}">
         <input type="submit" value="Invoice customer" />
     </form>
+    <hr/>
+    <h3>{{$customer->name}}'s invoices</h2>
     @include('partials.invoices', ['invoices' => $invoices])
 @endsection

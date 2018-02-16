@@ -8,6 +8,7 @@ use App\Delivery;
 use App\Invoice;
 use Carbon\Carbon;
 use Tests\TestCase;
+use App\Services\CustomerService;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
@@ -46,19 +47,30 @@ class CustomerTest extends TestCase
     {
         $this->customer->agreement->type = Agreement::TYPE_WEEKLY;
 
-        // TODO: Implement test for create weekly invoice
-        $invoice = null; /* @var $invoice Invoice */
+        // Implement test for create weekly invoice
+        $invoice = CustomerService::invoice($this->customer);
 
-        $this->assertEquals(60,$invoice->amount);
+        $this->assertEquals(60, $invoice->amount);
     }
 
     public function testCreateMonthlyInvoice()
     {
         $this->customer->agreement->type = Agreement::TYPE_MONTHLY;
+        
+        // Implement test for create monthly invoice
+        $invoice = CustomerService::invoice($this->customer);
 
-        // TODO: Implement test for create monthly invoice
-        $invoice = null; /* @var $invoice Invoice */
+        $this->assertEquals(84, $invoice->amount);
+    }
 
-        $this->assertEquals(84,$invoice->amount);
+    public function testDontSameTwiceInvoice()
+    {
+        $this->customer->agreement->type = Agreement::TYPE_MONTHLY;
+        
+        // Implement test for create monthly invoice
+        CustomerService::invoice($this->customer);
+        $invoice = CustomerService::invoice($this->customer);
+
+        $this->assertEquals(null, $invoice);
     }
 }

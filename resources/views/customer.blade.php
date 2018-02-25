@@ -7,6 +7,6 @@
         <input type="submit" value="Invoice customer" />
     </form>
     <hr/>
-    <h3>{{$customer->name}}'s invoices</h2>
+    <h3>{{$customer->name}}'s invoices</h3>
     @include('partials.invoices', ['invoices' => $invoices])
 @endsection

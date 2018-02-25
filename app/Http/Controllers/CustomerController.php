@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
-use App\Delivery;
 use App\Invoice;
 use App\Services\CustomerService;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
-use Carbon\Carbon;
 
 class CustomerController extends Controller
 {
